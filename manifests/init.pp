@@ -23,6 +23,12 @@ class gearman(
   $service_hasrestart = true
 ) inherits gearman::params {
 
+  if $::osfamily == 'RedHat' {
+    if ! defined(Class['epel']) {
+      include epel
+    }
+  }
+
   case $ensure {
     present: {
       if $autoupgrade == true {
