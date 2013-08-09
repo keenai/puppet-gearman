@@ -9,7 +9,7 @@ class gearman::params {
       $user = 'gearman'
     }
     'RedHat': {
-      $package_name = 'gearmand-server'
+      $package_name = 'gearmand'
       $config_file = '/etc/sysconfig/gearmand'
       $config_file_template = "${::osfamily}/default.erb"
       $service_name = 'gearmand'
